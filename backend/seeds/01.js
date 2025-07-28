@@ -20,6 +20,7 @@ exports.seed = async function(knex) {
     .insert([
       { name: 'Work' },
       { name: 'Friends' },
+      { name: 'Family' },
     ])
     .returning(['id', 'name']);
 

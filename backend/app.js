@@ -7,13 +7,12 @@ module.exports = async function (fastify, options) {
   });
 
   const pool = new Pool({
-    connectionString:
-      "postgresql://jessicalyall:postgres@localhost:5432/chat_app",
+    connectionString: process.env.DATABASE_URL,
   });
 
   // get all available groups (user not part of already)
   fastify.get("/groups", async (request, reply) => {
-    const { userId } = request.query; 
+    const { userId } = request.query;
 
     if (!userId) {
       return reply
