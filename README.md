@@ -1,4 +1,7 @@
 # Spruce chat app
+Please see [this document](./instructions.md) for getting the application running.
+
+I've included an image of my initial brainstorming for the app [here](./excaild.md).
 
 ## 🚀 Frontend Stack
 
@@ -44,6 +47,5 @@ Currently the user is hardcoded but the API and DB can support multi users which
 
 I was having issues sorting the IndexDB by message date, given more time I would move away from the local sort and push the API/IndexDB layer.
 
-Please see [this document](./instructions.md) for getting the application running.
-
+**Testing**- With additional time, I would add comprehensive tests for both the functions and components. There is some 
 
