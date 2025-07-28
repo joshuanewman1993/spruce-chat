@@ -5,7 +5,7 @@ import {
   refreshUserGroups,
 } from "./utils/fetch";
 
-import Home from "./components/Home";
+import Dashboard from "./components/Dashboard";
 import { hasPendingSyncItems } from "./db/db";
 import { syncQueueItems } from "./utils/queue";
 
@@ -110,7 +110,7 @@ In a nutshell its queue based system
         </div>
       )}
 
-      <Home userId={userId} />
+      <Dashboard userId={userId} />
     </>
   );
 }

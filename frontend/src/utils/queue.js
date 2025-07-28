@@ -38,14 +38,16 @@ export async function syncQueueItems() {
         }
 
         case "joinGroup": {
-          const {
-            group: { groupId },
-            userId,
-          } = item.payload;
+          const { group, userId } = item.payload;
           await axios.post(`http://localhost:4000/groups/join`, {
             userId: userId,
-            groupId: groupId,
+            groupId: group.id,
           });
+          break;
+        }
+
+        default: {
+          console.log("Uknown queue action");
           break;
         }
       }

@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useState } from "react";
 
 import { addToActionQueue } from "../hooks/useQueueAction";
 import { db } from "../db/db";
@@ -13,8 +13,7 @@ const Messages = ({ group, userId }) => {
       groupId ? db.messages.where("groupId").equals(groupId).toArray() : [],
     [groupId]
   );
-  
-  
+
   const sortedMessages =
     rawMessages &&
     rawMessages.sort((a, b) => new Date(a.delivered) - new Date(b.delivered));

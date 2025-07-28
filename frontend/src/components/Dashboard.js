@@ -8,7 +8,7 @@ import { db } from "../db/db";
 import { updateUserGroupStatus } from "../hooks/useGroupAction";
 import { useLiveQuery } from "dexie-react-hooks";
 
-export default function Home({ userId }) {
+export default function Dashboard({ userId }) {
   const [activeTab, setActiveTab] = useState("yourgroups");
   const [selectedGroup, setSelectedGroup] = useState(null);
 
@@ -57,7 +57,6 @@ export default function Home({ userId }) {
           userId={userId}
           onSelectGroup={setSelectedGroup}
           onStatusChange={handleGroupStatusChange}
-
         />
       ),
     },

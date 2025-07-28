@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 
-const GroupItem = ({
+export default function GroupItem({
   group,
   add = false,
   onSelectGroup,
   onStatusChange,
-}) => {
+}) {
   const [loading, setLoading] = useState(false);
 
   const handleStatusChange = async () => {
@@ -38,15 +38,13 @@ const GroupItem = ({
           handleStatusChange();
         }}
         disabled={loading}
-        className={`${
+        className={`text-xl font-bold ${
           add ? "text-green-600" : "text-red-600"
-        } text-xl font-bold`}
+        }`}
         aria-label={`${add ? "Join" : "Leave"} group ${group.name}`}
       >
         {add ? "Join" : "Leave"}
       </button>
     </li>
   );
-};
-
-export default GroupItem;
+}
