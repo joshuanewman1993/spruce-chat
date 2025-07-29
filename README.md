@@ -3,6 +3,10 @@ Please see [this document](./instructions.md) for getting the application runnin
 
 I've included an image of my initial brainstorming for the app [here](./excaild.md).
 
+## 🚀 Overall approach
+
+All user interactions are stored locally in IndexedDB first, allowing the app to work offline. Users can send messages, join and leave groups without an internet connection. When users perform actions (online or offline), they're queued locally and processed asynchronously. A background sync process runs every 5 seconds when online, flushing the queue and syncing with the backend. The UI updates based on local IndexDB data.
+
 ## 🚀 Frontend Stack
 
 The frontend is built with React and I have used Tailwind CSS for styling.
